@@ -78,6 +78,7 @@
               "projects/shell/src/styles.scss"
             ],
             "polyfills": [
+              "zone.js",
               "es-module-shims"
             ]
           },
