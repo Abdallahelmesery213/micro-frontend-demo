@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { loadRemoteModule } from '@angular-architects/native-federation';
 
 export const APP_ROUTES: Routes = [
     {
@@ -10,19 +10,11 @@ export const APP_ROUTES: Routes = [
   {
     path: 'mfe1',
     loadChildren: () =>
-      loadRemoteModule({
-        remoteEntry: 'http://localhost:4201/remoteEntry.js',
-        remoteName: 'mfe1',
-        exposedModule: './routes',
-      }).then(m => m.MFE_HOME_ROUTES),
+      loadRemoteModule('mfe1', './routes').then((m: { routes: Routes }) => m.routes),
   },
   {
     path: 'mfe2',
     loadChildren: () =>
-      loadRemoteModule({
-        remoteEntry: 'http://localhost:4202/remoteEntry.js',
-        remoteName: 'mfe2',
-        exposedModule: './routes',
-      }).then(m => m.MFE_HOME_ROUTES),
+      loadRemoteModule('mfe2', './routes').then((m: { routes: Routes }) => m.routes),
   },
 ];

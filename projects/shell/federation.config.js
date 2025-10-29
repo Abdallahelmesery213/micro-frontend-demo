@@ -1,6 +1,10 @@
 const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
+  remotes: {
+    mfe1: 'http://localhost:4201',
+    mfe2: 'http://localhost:4202',
+  },
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
