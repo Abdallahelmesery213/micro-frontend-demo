@@ -112,7 +112,9 @@
             "port": 4200
           },
           "configurations": {
-            "development": {},
+            "development": {
+              "buildTarget": "shell:esbuild:development"
+            },
             "production": {
               "buildTarget": "shell:esbuild:production"
             }
@@ -192,6 +194,7 @@
               "projects/mfe1/src/styles.scss"
             ],
             "polyfills": [
+              "zone.js",
               "es-module-shims"
             ]
           },
@@ -306,6 +309,7 @@
               "projects/mfe2/src/styles.scss"
             ],
             "polyfills": [
+              "zone.js",
               "es-module-shims"
             ]
           },
