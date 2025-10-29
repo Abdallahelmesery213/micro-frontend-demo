@@ -2,8 +2,8 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 
 module.exports = withNativeFederation({
   remotes: {
-    mfe1: 'http://localhost:4201',
-    mfe2: 'http://localhost:4202',
+    mfe1: 'http://localhost:4201/remoteEntry.json',
+    mfe2: 'http://localhost:4202/remoteEntry.json',
   },
 
   shared: {
